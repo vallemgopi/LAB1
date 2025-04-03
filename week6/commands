@@ -1,0 +1,130 @@
+1️⃣ GET Request – Fetch All Users
+URL:
+
+bash
+Copy
+Edit
+http://localhost:3000/users
+Method: GET
+
+Expected Response (if there are users):
+
+json
+Copy
+Edit
+[
+  {
+    "_id": "660c1d6d4fbb5c1234567890",
+    "name": "John Doe",
+    "__v": 0
+  }
+]
+💻 cURL Alternative:
+If you don’t want to use Postman, run this in the terminal:
+
+sh
+Copy
+Edit
+curl -X GET http://localhost:3000/users
+2️⃣ POST Request – Add a New User
+URL:
+
+bash
+Copy
+Edit
+http://localhost:3000/users
+Method: POST
+
+Headers:
+
+pgsql
+Copy
+Edit
+Content-Type: application/json
+Body (JSON format, select "raw" in Postman):
+
+json
+Copy
+Edit
+{
+  "name": "Alice"
+}
+Expected Response:
+
+json
+Copy
+Edit
+{
+  "_id": "660c1d6d4fbb5c1234567891",
+  "name": "Alice",
+  "__v": 0
+}
+💻 cURL Alternative:
+sh
+Copy
+Edit
+curl -X POST http://localhost:3000/users -H "Content-Type: application/json" -d '{"name": "Alice"}'
+3️⃣ PUT Request – Update a User
+URL:
+
+bash
+Copy
+Edit
+http://localhost:3000/users/<USER_ID>
+(Replace <USER_ID> with an actual user ID from the GET request.)
+
+Method: PUT
+
+Headers:
+
+pgsql
+Copy
+Edit
+Content-Type: application/json
+Body (JSON format):
+
+json
+Copy
+Edit
+{
+  "name": "Updated Alice"
+}
+Expected Response:
+
+json
+Copy
+Edit
+{
+  "_id": "660c1d6d4fbb5c1234567891",
+  "name": "Updated Alice",
+  "__v": 0
+}
+💻 cURL Alternative:
+sh
+Copy
+Edit
+curl -X PUT http://localhost:3000/users/<USER_ID> -H "Content-Type: application/json" -d '{"name": "Updated Alice"}'
+4️⃣ DELETE Request – Remove a User
+URL:
+
+bash
+Copy
+Edit
+http://localhost:3000/users/<USER_ID>
+(Replace <USER_ID> with an actual user ID.)
+
+Method: DELETE
+
+Expected Response:
+
+json
+Copy
+Edit
+{
+  "message": "User deleted successfully"
+}
+💻 cURL Alternative:
+sh
+Copy
+Edit
+curl -X DELETE http://localhost:3000/users/<USER_ID>

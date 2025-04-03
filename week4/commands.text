@@ -1,0 +1,72 @@
+How to Test API Endpoints Using Postman
+1. Get All Users
+Method: GET
+
+URL: http://localhost:3000/users
+
+Response:
+
+json
+Copy
+Edit
+[
+  { "id": 1, "name": "Alice" },
+  { "id": 2, "name": "Bob" }
+]
+2. Create a New User
+Method: POST
+
+URL: http://localhost:3000/users
+
+Body (JSON):
+
+json
+Copy
+Edit
+{
+  "name": "Charlie"
+}
+Response:
+
+json
+Copy
+Edit
+{
+  "id": 3,
+  "name": "Charlie"
+}
+3. Update an Existing User
+Method: PUT
+
+URL: http://localhost:3000/users/1
+
+Body (JSON):
+
+json
+Copy
+Edit
+{
+  "name": "Alicia"
+}
+Response:
+
+json
+Copy
+Edit
+{
+  "id": 1,
+  "name": "Alicia"
+}
+4. Delete a User
+Method: DELETE
+
+URL: http://localhost:3000/users/2
+
+Response:
+
+json
+Copy
+Edit
+{
+  "message": "User deleted successfully"
+}
